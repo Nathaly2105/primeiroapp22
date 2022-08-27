@@ -10,6 +10,26 @@ export default function App() {
 	  let r = parseFloat(valor1) + parseFloat(valor2);
 	  setResultado(r);
   }
+	function subtrair(){
+	  
+	  let r = parseFloat(valor1) - parseFloat(valor2);
+	  setResultado(r);
+  }
+	function multiplicar(){
+	  
+	  let r = parseFloat(valor1) * parseFloat(valor2);
+	  setResultado(r);
+  }
+	function dividir (){
+	  
+	  let r = parseFloat(valor1) / parseFloat(valor2);
+	  setResultado(r);
+  }
+	function exponenciacao (){
+	  
+	  let r = Math.pow(parseFloat(valor1) , parseFloat(valor2));
+	  setResultado(r);
+  }
   return (
     <View style={styles.container}>
 		  <View style={styles.bloco}>
@@ -22,7 +42,7 @@ export default function App() {
 				 style={styles.input}
 				 value={valor1}
 				 onChangeText={(valor)=>setValor1(valor)}
-				 keyboardType="numeric"//aparece só o teclado numerico
+				 keyboardType="numeric"//aparece somente o teclado numerico
 			/>
 		  </View>
 		  <br></br>
@@ -32,7 +52,7 @@ export default function App() {
 				style={styles.input}
 				value={valor2}
 				onChangeText={(valor)=>setValor2(valor)}
-				keyboardType="numeric"//aparece só o teclado numerico
+				keyboardType="numeric"//aparece sรณ o teclado numerico
 
 			/>
 		  </View>
@@ -49,6 +69,42 @@ export default function App() {
 				onPress={somar}	
 			>
 				<Text style={styles.textoBotao}>SOMAR</Text>  
+			</TouchableOpacity>
+		  </View>
+		   <br></br>
+		  <View>
+		  	<TouchableOpacity 
+				style={styles.botao}
+				onPress={subtrair}	
+			>
+				<Text style={styles.textoBotao}>SUBTRAIR</Text>  
+			</TouchableOpacity>
+		  </View>
+		   <br></br>
+		  <View>
+		  	<TouchableOpacity 
+				style={styles.botao}
+				onPress={multiplicar}	
+			>
+				<Text style={styles.textoBotao}>MULTIPLICAR</Text>  
+			</TouchableOpacity>
+		  </View>
+		   <br></br>
+		  <View>
+		  	<TouchableOpacity 
+				style={styles.botao}
+				onPress={dividir}	
+			>
+				<Text style={styles.textoBotao}>DIVIDIR</Text>  
+			</TouchableOpacity>
+		  </View>
+		   <br></br>
+		   <View>
+		  	<TouchableOpacity 
+				style={styles.botao}
+				onPress={exponenciacao}	
+			>
+				<Text style={styles.textoBotao}>EXPONENCIAÇÃO</Text>  
 			</TouchableOpacity>
 		  </View>
     </View>
@@ -74,13 +130,12 @@ const styles = StyleSheet.create({
 		borderWidth:2,
 		fontSize: 20,
 		borderRadius: 5
-		
 	},
 	botao: {
-		backgroundColor:'#000',
-		borderRadius:15,
-		width: 90,
-		marginLeft: 110
+		backgroundColor:'#40E7',
+		borderRadius:20,
+		width: 200,
+		marginLeft: 60
 	},
 	textoBotao: {
 		color: '#fff',
